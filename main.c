@@ -1,6 +1,11 @@
 #include <stdio.h>
+#include "functions.h"
 
-struct FashionEntity {
-    char name[50];
-    int popularity;
-};
+int main() {
+    struct FashionTrend trends[10];
+
+    populateTrends(trends);
+    printTrends(trends);
+
+    return 0;
+}
