@@ -1,28 +1,19 @@
-#include<stdio.h>
-void displayPopularity(struct FashionEntity entities[], int numEntities) {
-    printf("Name\tPopularity Score\n");
-    for (int i = 0; i < numEntities; i++) {
-        printf("%s\t%d\n", entities[i].name, entities[i].popularity);
+#include <stdio.h>
+#include "functions.h"
+
+void populateTrends(struct FashionTrend trends[10]) {
+    for (int i = 0; i < 10; i++) {
+        printf("Enter a fashion trend %d: ", i+1);
+        scanf("%s", trends[i].name);
+
+        printf("Enter the score for trend %d: ", i+1);
+        scanf("%d", &trends[i].score);
     }
 }
 
-int main() {
-    
-    struct FashionEntity entities[10] = {
-        {"Dress", 80},
-        {"Shirt", 90},
-        {"Pants", 85},
-        {"Skirt", 70},
-        {"Jacket", 95},
-        {"T-Shirt", 88},
-        {"Jeans", 92},
-        {"Sweater", 82},
-        {"Hat", 75},
-        {"Scarf", 87}
-    };
-
-    
-    displayPopularity(entities, 10);
-
-    return 0;
+void printTrends(struct FashionTrend trends[10]) {
+    printf("\nFashion Trends:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("%s (%d)\n", trends[i].name, trends[i].score);
+    }
 }
